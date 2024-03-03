@@ -4,7 +4,7 @@
 
     <application>
         <activity
-            android:name=".ui.AlbumsActivity"
+            android:name=".ui.BreedsActivity"
             android:exported="true">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />

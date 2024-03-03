@@ -9,11 +9,11 @@ import com.antonprokopov.albumsfeed.di.AlbumsFeedComponentHolder
 import com.antonprokopov.core.ui.ActivityLifecycleOwnerHolder
 import javax.inject.Inject
 
-class AlbumsActivity : AppCompatActivity() {
+class BreedsActivity : AppCompatActivity() {
 
     companion object {
         fun newIntent(context: Context): Intent {
-            val intent = Intent(context, AlbumsActivity::class.java)
+            val intent = Intent(context, BreedsActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             return intent
         }

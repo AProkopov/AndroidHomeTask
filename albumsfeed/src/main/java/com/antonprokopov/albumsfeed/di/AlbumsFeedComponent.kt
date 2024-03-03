@@ -1,6 +1,6 @@
 package com.antonprokopov.albumsfeed.di
 
-import com.antonprokopov.albumsfeed.ui.AlbumsActivity
+import com.antonprokopov.albumsfeed.ui.BreedsActivity
 import com.antonprokopov.albumsfeed.ui.AlbumsFragment
 import com.antonprokopov.albumsfeed.viewmodel.AlbumsViewModel
 import com.antonprokopov.core.di.ParentComponentProvider
@@ -14,7 +14,7 @@ annotation class BreedsFeedScope
 @BreedsFeedScope
 @Subcomponent(modules = [AlbumsFeedModule::class])
 interface AlbumsFeedComponent {
-    fun inject(activity: AlbumsActivity)
+    fun inject(activity: BreedsActivity)
     fun inject(fragment: AlbumsFragment)
     fun inject(albumsViewModel: AlbumsViewModel)
 }

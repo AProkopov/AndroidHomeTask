@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.antonprokopov.albumsfeed.data.models.BreedsListModel
-import com.antonprokopov.albumsfeed.data.models.ExtendedAlbumDto
 import com.antonprokopov.albumsfeed.di.AlbumsFeedComponentHolder
 import com.antonprokopov.albumsfeed.usecase.BreedsUseCase
 import com.antonprokopov.core.data.Resource
@@ -35,7 +34,7 @@ class AlbumsViewModel : ViewModel() {
                     loadingStateLiveData.value = it is Resource.Loading
 
                     when (it) {
-                        is Resource.Success -> albumsDataLiveData.value = it.data!!
+                        is Resource.Success -> albumsDataLiveData.value = it.data
                         is Resource.Error -> errorStateLiveData.value = it.desc
                         is Resource.Loading -> {
                             //do nothing

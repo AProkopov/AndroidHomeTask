@@ -5,6 +5,6 @@ import com.antonprokopov.albumsfeedapi.route.AlbumsFeedRouter
 
 class AlbumsFeedRouterImpl: AlbumsFeedRouter {
     override fun openAlbumsFeed(context: Context) {
-        context.startActivity(AlbumsActivity.newIntent(context))
+        context.startActivity(BreedsActivity.newIntent(context))
     }
 }
