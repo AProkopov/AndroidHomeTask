@@ -27,7 +27,7 @@ class AlbumsUseCase @Inject constructor(private val apiService: ApiService) {
             }
 
             emit(result)
-        }.flowOn(Dispatchers.Main)
+        }.flowOn(Dispatchers.IO)
     }
 
     @ExperimentalCoroutinesApi
@@ -38,7 +38,7 @@ class AlbumsUseCase @Inject constructor(private val apiService: ApiService) {
         val extendedAlbums = mutableListOf<ExtendedAlbumDto>()
 
         coroutineScope {
-            users = async(Dispatchers.IO) { apiService.getUsers() }
+            users = async { apiService.getUsers() }
             albums = async { apiService.getAlbums() }
             photos = async { apiService.getPhotos() }
             awaitAll(users, albums, photos)

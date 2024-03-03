@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class AlbumsViewModel: ViewModel() {
+class AlbumsViewModel : ViewModel() {
 
     @Inject
     lateinit var albumsUseCase: AlbumsUseCase
@@ -36,8 +36,11 @@ class AlbumsViewModel: ViewModel() {
                     loadingStateLiveData.value = it is Resource.Loading
 
                     when (it) {
-                        is Resource.Success -> albumsDataLiveData.value = it.data
+                        is Resource.Success -> albumsDataLiveData.value = it.data!!
                         is Resource.Error -> errorStateLiveData.value = it.desc
+                        is Resource.Loading -> {
+                            //do nothing
+                        }
                     }
                 }
         }
