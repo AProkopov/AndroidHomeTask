@@ -31,13 +31,13 @@ class AlbumsUseCaseTest {
         runBlocking {
             Mockito.`when`(apiService.getAlbums()).thenReturn(getAlbumsTestData())
             Mockito.`when`(apiService.getPhotos()).thenReturn(getPhotosTestData())
-            Mockito.`when`(apiService.getUsers()).thenReturn(getUsersTestData())
+//            Mockito.`when`(apiService.getUsers()).thenReturn(getUsersTestData())
         }
     }
 
     @Test
     fun execute() {
-        val useCase = AlbumsUseCase(apiService)
+        val useCase = BreedsUseCase(apiService)
 
         runBlocking {
             val resultList = useCase.execute().toList()

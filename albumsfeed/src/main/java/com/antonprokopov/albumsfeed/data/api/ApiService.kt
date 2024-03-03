@@ -1,6 +1,7 @@
 package com.antonprokopov.albumsfeed.data.api
 
 import com.antonprokopov.albumsfeed.data.models.AlbumDto
+import com.antonprokopov.albumsfeed.data.models.BreedListResponse
 import com.antonprokopov.albumsfeed.data.models.PhotoDto
 import com.antonprokopov.albumsfeed.data.models.UserDto
 import retrofit2.http.GET
@@ -15,4 +16,8 @@ interface ApiService {
 
     @GET("/albums")
     suspend fun getAlbums(): List<AlbumDto>
+
+
+    @GET("/api/breeds/list/all")
+    suspend fun getBreeds(): BreedListResponse
 }

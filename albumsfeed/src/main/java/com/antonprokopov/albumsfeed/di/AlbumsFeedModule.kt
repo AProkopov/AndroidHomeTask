@@ -12,7 +12,7 @@ import dagger.Provides
 @Module
 class AlbumsFeedModule {
 
-    @AlbumsFeedScope
+    @BreedsFeedScope
     @Provides
     internal fun provideApiService(
         networkResources: NetworkResources
@@ -23,11 +23,11 @@ class AlbumsFeedModule {
             .create(ApiService::class.java)
     }
 
-    @AlbumsFeedScope
+    @BreedsFeedScope
     @Provides
     fun provideLifeCycleOwnerHolder(): ActivityLifecycleOwnerHolder = ActivityLifecycleOwnerHolder()
 
-    @AlbumsFeedScope
+    @BreedsFeedScope
     @Provides
     fun provideSplashVm(activityLifecycleOwnerHolder: ActivityLifecycleOwnerHolder): AlbumsViewModel =
         ViewModelProvider(activityLifecycleOwnerHolder.viewModelStoreOwner).get(AlbumsViewModel::class.java)

@@ -5,9 +5,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.antonprokopov.albumsfeed.R
-import com.antonprokopov.albumsfeed.data.models.ExtendedAlbumDto
 import com.antonprokopov.albumsfeed.databinding.FragmentAlbumsFeedBinding
-import com.antonprokopov.albumsfeed.ui.albumslist.AlbumsAdapter
+import com.antonprokopov.albumsfeed.ui.albumslist.BreedsAdapter
 import com.antonprokopov.albumsfeed.viewmodel.AlbumsViewModel
 import com.antonprokopov.core.extensions.gone
 import com.antonprokopov.core.extensions.setVisibleOrGone
@@ -29,7 +28,7 @@ class AlbumsUi  @Inject constructor(
 
     fun initUI() {
         fragmentViewBinding?.apply {
-            rvAlbums.adapter = AlbumsAdapter(context)
+            rvAlbums.adapter = BreedsAdapter(context)
             rvAlbums.layoutManager = LinearLayoutManager(context)
             swipeRefreshLayoutAlbums.setOnRefreshListener(::getAlbums)
             emptyStateView.setRetryCallback(::getAlbums)
@@ -44,10 +43,10 @@ class AlbumsUi  @Inject constructor(
         albumsVm.albumsDataLiveData.observe(
             activityLifecycleOwnerHolder.lifecycleOwner,
             {
-                if (it.isEmpty()) {
+                if (it.breeds.isEmpty()) {
                     showEmptyState()
                 } else {
-                    showAlbums(it)
+                    showAlbums(it.breeds)
                 }
             }
         )
@@ -91,11 +90,11 @@ class AlbumsUi  @Inject constructor(
         }
     }
 
-    private fun showAlbums(albums: List<ExtendedAlbumDto>) {
+    private fun showAlbums(albums: List<String>) {
         fragmentViewBinding?.apply {
             emptyStateView.gone()
             swipeRefreshLayoutAlbums.visible()
-            (rvAlbums.adapter as? AlbumsAdapter)?.setList(albums)
+            (rvAlbums.adapter as? BreedsAdapter)?.setList(albums)
         }
     }
 

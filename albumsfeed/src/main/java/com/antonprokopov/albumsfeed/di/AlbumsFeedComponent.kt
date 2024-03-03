@@ -9,9 +9,9 @@ import javax.inject.Scope
 
 @Scope
 @Retention(AnnotationRetention.RUNTIME)
-annotation class AlbumsFeedScope
+annotation class BreedsFeedScope
 
-@AlbumsFeedScope
+@BreedsFeedScope
 @Subcomponent(modules = [AlbumsFeedModule::class])
 interface AlbumsFeedComponent {
     fun inject(activity: AlbumsActivity)
