@@ -9,7 +9,7 @@ android {
     buildToolsVersion app_buildToolsVersion
 
     defaultConfig {
-        applicationId "com.antonprokopov.hometasknm"
+        applicationId "com.antonprokopov.androidhometask"
         minSdkVersion app_minSdkVersion
         targetSdkVersion app_targetSdkVersion
         versionCode 1

@@ -1,4 +1,4 @@
-package com.antonprokopov.hometasknm.testsframework
+package com.antonprokopov.androidhometask.testsframework
 
 import android.os.SystemClock
 import android.view.View

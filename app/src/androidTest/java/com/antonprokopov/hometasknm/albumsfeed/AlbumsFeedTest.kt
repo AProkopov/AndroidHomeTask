@@ -1,13 +1,13 @@
-package com.antonprokopov.hometasknm.albumsfeed
+package com.antonprokopov.androidhometask.albumsfeed
 
 import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.idling.CountingIdlingResource
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.antonprokopov.appstartup.ui.SplashActivity
-import com.antonprokopov.hometasknm.testsframework.I
-import com.antonprokopov.hometasknm.testsframework.dontSee
-import com.antonprokopov.hometasknm.testsframework.see
+import com.antonprokopov.androidhometask.testsframework.I
+import com.antonprokopov.androidhometask.testsframework.dontSee
+import com.antonprokopov.androidhometask.testsframework.see
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule

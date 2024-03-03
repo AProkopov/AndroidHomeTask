@@ -1,4 +1,4 @@
-package com.antonprokopov.hometasknm
+package com.antonprokopov.androidhometask
 
 import com.antonprokopov.albumsfeed.di.AlbumsFeedParentComponent
 import com.antonprokopov.appstartup.di.AppStartupParentComponent

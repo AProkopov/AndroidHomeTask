@@ -1,4 +1,4 @@
-package com.antonprokopov.hometasknm
+package com.antonprokopov.androidhometask
 
 import android.content.Context
 import com.antonprokopov.albumsfeed.di.AlbumsFeedSharedModule

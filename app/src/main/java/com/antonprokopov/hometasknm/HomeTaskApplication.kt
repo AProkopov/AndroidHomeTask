@@ -1,9 +1,9 @@
-package com.antonprokopov.hometasknm
+package com.antonprokopov.androidhometask
 
 import android.app.Application
 import com.antonprokopov.core.di.ParentComponentProvider
 
-class NMApplication: Application() {
+class HomeTaskApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
