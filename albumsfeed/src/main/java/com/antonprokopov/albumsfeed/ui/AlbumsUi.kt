@@ -101,7 +101,7 @@ class AlbumsUi  @Inject constructor(
 
     private fun setDecorationToAlbumsList(recyclerView: RecyclerView) {
         val dividerItemDecoration = DividerItemDecoration(
-            recyclerView.getContext(),
+            recyclerView.context,
             DividerItemDecoration.VERTICAL
         )
         recyclerView.addItemDecoration(dividerItemDecoration)

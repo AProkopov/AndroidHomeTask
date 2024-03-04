@@ -10,8 +10,8 @@
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:maxLines="1"
-        android:paddingStart="@dimen/albumsfeed_item_standard_padding"
-        android:paddingEnd="@dimen/albumsfeed_item_text_end_margin"
+        android:padding="@dimen/albumsfeed_item_standard_padding"
+        android:textSize="@dimen/albumsfeed_title_text_size"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
