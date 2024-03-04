@@ -3,12 +3,13 @@ package com.antonprokopov.albumsfeed.ui.albumslist
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import com.antonprokopov.albumsfeed.databinding.ItemBreedBinding
+import com.antonprokopov.core.extensions.toLongRepresentation
 
-class BreedsAdapter(context: Context) : RecyclerView.Adapter<BreedViewHolder>() {
+class BreedsAdapter(context: Context) : ListAdapter<String, BreedViewHolder>(diffCallback) {
 
-    private var albumItems: List<String> = emptyList()
     private val inflater = LayoutInflater.from(context)
 
     override fun onCreateViewHolder(
@@ -19,13 +20,15 @@ class BreedsAdapter(context: Context) : RecyclerView.Adapter<BreedViewHolder>() 
     )
 
     override fun onBindViewHolder(holder: BreedViewHolder, position: Int) {
-        holder.bind(albumItems[position])
+        holder.bind(getItem(position))
     }
 
-    override fun getItemCount() = albumItems.size
+    override fun getItemId(position: Int) = getItem(position).toLongRepresentation()
 
-    fun setList(list: List<String>) {
-        albumItems = list
-        notifyDataSetChanged()
+    companion object {
+        private val diffCallback = object : DiffUtil.ItemCallback<String>() {
+            override fun areItemsTheSame(old: String, new: String) = old.toLongRepresentation() == new.toLongRepresentation()
+            override fun areContentsTheSame(old: String, new: String) = old == new
+        }
     }
 }

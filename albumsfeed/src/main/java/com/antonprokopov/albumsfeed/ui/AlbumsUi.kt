@@ -41,29 +41,26 @@ class AlbumsUi  @Inject constructor(
 
     private fun initSubscriptions() {
         albumsVm.albumsDataLiveData.observe(
-            activityLifecycleOwnerHolder.lifecycleOwner,
-            {
-                if (it.breeds.isEmpty()) {
-                    showEmptyState()
-                } else {
-                    showAlbums(it.breeds)
-                }
+            activityLifecycleOwnerHolder.lifecycleOwner
+        ) {
+            if (it.breeds.isEmpty()) {
+                showEmptyState()
+            } else {
+                showAlbums(it.breeds)
             }
-        )
+        }
 
         albumsVm.loadingStateLiveData.observe(
-            activityLifecycleOwnerHolder.lifecycleOwner,
-            {
-                showLoadingState(it)
-            }
-        )
+            activityLifecycleOwnerHolder.lifecycleOwner
+        ) {
+            showLoadingState(it)
+        }
 
         albumsVm.errorStateLiveData.observe(
-            activityLifecycleOwnerHolder.lifecycleOwner,
-            {
-                showErrorState()
-            }
-        )
+            activityLifecycleOwnerHolder.lifecycleOwner
+        ) {
+            showErrorState()
+        }
     }
 
     private fun showErrorState() {
@@ -94,7 +91,7 @@ class AlbumsUi  @Inject constructor(
         fragmentViewBinding?.apply {
             emptyStateView.gone()
             swipeRefreshLayoutAlbums.visible()
-            (rvAlbums.adapter as? BreedsAdapter)?.setList(albums)
+            (rvAlbums.adapter as? BreedsAdapter)?.submitList(albums)
         }
     }
 
