@@ -2,7 +2,7 @@ package com.antonprokopov.appstartup.ui
 
 import android.app.Activity
 import android.content.Context
-import com.antonprokopov.albumsfeedapi.route.AlbumsFeedRouter
+import com.antonprokopov.breedsfeedapi.route.BreedsFeedRouter
 import com.antonprokopov.appstartup.databinding.FragmentSplashBinding
 import com.antonprokopov.appstartup.viewmodel.SplashViewModel
 import com.antonprokopov.core.ui.ActivityLifecycleOwnerHolder
@@ -12,7 +12,7 @@ import javax.inject.Inject
 class SplashUI @Inject constructor(
     private val activityLifecycleOwnerHolder: ActivityLifecycleOwnerHolder,
     private val splashViewModel: SplashViewModel,
-    private val feedRouter: AlbumsFeedRouter,
+    private val feedRouter: BreedsFeedRouter,
     private val context: Context
     ): ViewBindingUi<FragmentSplashBinding>() {
 
@@ -54,7 +54,7 @@ class SplashUI @Inject constructor(
     }
 
     private fun navigateAndCloseCurrentActivity() {
-        feedRouter.openAlbumsFeed(context)
+        feedRouter.openBreedsFeed(context)
         (activityLifecycleOwnerHolder.lifecycleOwner as Activity).finish()
     }
 

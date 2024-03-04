@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="breedsfeed_title_text_size">24sp</dimen>
+    <dimen name="breedsfeed_progress_bar_size">64dp</dimen>
+
+    <dimen name="breedsfeed_item_standard_padding">8dp</dimen>
+    <dimen name="breedsfeed_item_image_margin">16dp</dimen>
+    <dimen name="breedsfeed_item_text_end_margin">16dp</dimen>
+    <dimen name="breedsfeed_item_image_size">80dp</dimen>
+</resources>

@@ -1,11 +1,11 @@
 package com.antonprokopov.androidhometask
 
 import android.content.Context
-import com.antonprokopov.albumsfeed.di.AlbumsFeedSharedModule
+import com.antonprokopov.breedsfeed.di.BreedsFeedSharedModule
 import dagger.Module
 import dagger.Provides
 
-@Module(includes = [AlbumsFeedSharedModule::class])
+@Module(includes = [BreedsFeedSharedModule::class])
 class MergedAppModule(private val appContext: Context) {
     @Provides
     internal fun provideContext(): Context {
